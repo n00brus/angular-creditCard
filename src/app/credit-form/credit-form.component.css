@@ -1,0 +1,224 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro:400,500,600,700|Source+Sans+Pro:400,600,700&display=swap");
+*{
+
+    box-sizing: border-box;
+    font-family: "Source Sans Pro", sans-serif;
+  }
+.creditCard__form {
+    margin: 0 auto;
+    background: #fff;
+    box-shadow: 0 30px 60px 0 rgba(90, 116, 148, 0.4);
+    border-radius: 10px;
+    padding: 35px;
+    padding-top: 180px;
+    width: 600px;
+    position: relative;
+    margin-top: 300px;
+  }
+.submit__button{
+    background-color: lightblue;
+    box-shadow: 0px 4px 30px -6px rgba(36, 52, 70, 0.65);
+    color: white;
+    width: 100%;
+    padding: 10px 0;
+    border-radius: 7px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 500;
+  letter-spacing: 1px;
+  font-size: 16px;
+}
+.submit__button:focus {
+    outline: none;
+  }
+input,select{
+    border-radius: 5px;
+    border: 1px solid grey;
+    
+    padding: 10px 10px;  
+    
+}
+select{
+    width: 47%;
+    
+}
+.bigInput{
+    width: 100%;
+    
+}
+input:hover,select:hover{
+    border: 1px solid blue;
+    transition: all 0.3s ;
+}
+input:focus,select:focus {
+    border: 1px solid blue;
+    box-shadow: 5px 10px 25px -10px  rgba(36, 52, 70, 0.65);
+    outline: none;
+}
+.smallinputs{
+    display: flex;
+}
+.date__select{
+    width: 70%;
+    padding-right: 50px;
+}
+.date__flex{
+    display: flex;
+    justify-content: space-between;
+}
+
+.creditCard{
+    position: absolute;
+    width: 80%;
+    z-index: 1;
+   
+    background-color: blue;
+   padding: 30px;
+    height: 250px;
+    top: 0;
+    margin-left: 25px;
+    margin-top: -125px;
+    border-radius: 10px;
+    color: white;
+      /* background-position: 90% center; */
+      background-repeat: no-repeat;
+    transition: transform ease-in-out 0.8s, background-color 0s  0.4s ;
+   
+    
+}
+
+.creditCard-flex{
+    display: flex;
+    justify-content: space-between;
+    color: grey;
+
+}
+.creditCard-name{
+    color: white;
+    font-size: 18px;
+    text-transform: uppercase;
+    height: 25px;
+    overflow: hidden;
+    width: 330px;
+
+}
+.creditCard-date{
+    color: white;
+    font-size: 18px;
+    text-transform: uppercase;
+    height: 25px;
+    width: 20%;
+    
+}
+.creditCard__chip{
+    background-image: url(https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/chip.png);
+    width: 70px;
+    height: 55px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.creditCard__logo{
+    background-image: url(https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/visa.png);
+    width: 100px;
+    height: 70px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    
+}
+/* .creditCard:hover{
+    transform: perspective(500px)
+     rotateY(180deg);
+    
+} */
+.flipover{
+    transform: perspective(600px)
+    rotateY(180deg);
+}
+
+.backgroundchanged{
+    background-color: orange;
+    
+}
+.creditCard-number{
+    font-size: 30px;
+    letter-spacing: 5px;
+}
+.creditCard-number:empty:not(:focus):before{
+    content:attr(data-ph)
+}
+.creditCard-front{
+    transition: display 0 0.4s;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    z-index: 3;
+}
+.creditCard-back{
+    transform: scale(-1, 1);
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+.creditCard-back__line{
+    background-color: black;
+    width: 480px;
+    margin-left: -30px;
+
+    height: 40px;
+    opacity: 0.75;
+}
+.creditCard-back__CVVcode{
+    width: 450px;
+    margin-left: -15px;
+    background-color: white;
+    height: 35px;
+    display: flex;
+    
+    align-items: center;
+    color: black;
+}
+
+.whiteSquare{
+    position: absolute;
+    border: 2px solid white;
+    
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    margin-top: -30px;
+    margin-left: -30px;
+    transition: all 0.5s;
+}
+.whiteSquare-name{
+    position: absolute;
+    border: 2px solid white;
+    width: 350px;
+    height: 60px;
+    
+    margin-top: 140px;
+    margin-left: -10px;
+    opacity: 1;
+}
+.whiteSquare-date{
+    position: absolute;
+    border: 2px solid white;
+    width: 80px;
+    height: 60px;
+    margin-top: 140px;
+    margin-left: 350px;
+    opacity: 1;
+}
+.whiteSquare-number{
+    position: absolute;
+    border: 2px solid white;
+    width: 400px;
+    height: 60px;
+    margin-top: 70px;
+    margin-left: -10px;
+    opacity: 1;
+}

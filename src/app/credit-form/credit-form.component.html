@@ -1,0 +1,96 @@
+<div class="creditCard__form">
+
+    <div class="creditCard" [ngClass]="flipCard">
+        <div class="whiteSquare" [ngClass]="SquarePosition"></div>
+        <!-- <div class="whiteSquare-number"></div>
+        <div class="whiteSquare-name"></div>
+        <div class="whiteSquare-date"></div> -->
+        <div class="creditCard-front" [ngStyle]="{display: frontface()}">
+            <div class="creditCard-flex">
+                <div class="creditCard__chip"></div>
+                <div class="creditCard__logo"></div>
+            </div>
+
+            <div class="creditCard-number" data-ph="****************">{{forma.number}}</div>
+
+
+            <div class="creditCard-flex">
+                <div>
+                    Card Holder
+                    <div class="creditCard-name">{{forma.name}}</div>
+                </div>
+                <div>
+                    Expires
+                    <div class="creditCard-date">{{forma.month}}/{{forma.year}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="creditCard-back" [ngStyle]="{display: backface()}">
+            <div class="creditCard-back__line"></div>
+            CVV
+            <div class="creditCard-back__CVVcode">{{forma.CVV}}</div>
+            <div class="creditCard__logo" style="margin-left: -15px;"></div>
+        </div>
+
+
+    </div>
+    Card Number
+    <br>
+    <input type=" text" class="bigInput" [(ngModel)]="forma.number" maxlength="20" (ngModelChange)="checkNumber($event)"
+        placeholder="XXXX XXXX XXXX XXXX" (focus)="whiteSquare('number')" (blur)="whiteSquare('blur')"
+        [textMask]="{mask: cardMask}">
+    <br>
+    Card Name
+    <br>
+    <input type="text" class="bigInput" [(ngModel)]="forma.name" (focus)="whiteSquare('name')"
+        (blur)="whiteSquare('blur')">
+    <br>
+    <div class="smallinputs">
+
+        <div class="date__select">
+            Expiration Date
+            <br>
+            <div class="date__flex">
+                <select name="" id="" [(ngModel)]="forma.month" (focus)="whiteSquare('date')"
+                    (blur)="whiteSquare('blur')">
+                    <option value="Month" disabled=true>Month </option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select>
+                <select [(ngModel)]="forma.year" (focus)="whiteSquare('date')" (blur)="whiteSquare('blur')">
+                    <option value="Year" disabled=true> Year</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                    <option value="2027">2027</option>
+                    <option value="2028">2028</option>
+                    <option value="2029">2029</option>
+                    <option value="2030">2030</option>
+                    <option value="2031">2031</option>
+                    <option value="2032">2032</option>
+                </select>
+            </div>
+        </div>
+        <div class="cvvcode">
+            CVV
+            <br>
+            <input type="text" maxlength="4" [(ngModel)]="forma.CVV" class="CVVcode" (focus)="onFocus()"
+                (blur)="onBlur()">
+        </div>
+    </div>
+    <br>
+    <button (click)="formSubmit($event)" class="submit__button">SUBMIT</button>
+</div>
